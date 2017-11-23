@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="data_migrate_form" model="ir.ui.view">
+        <field name="name">data.migrate.form</field>
+        <field name="model">data.migrate</field>
+        <field name="arch" type="xml">
+            <form string="数据迁移">
+                <sheet string="数据迁移">
+                    <group>
+                        <button name="btn_res_company_base" string="btn_res_company_base" type="object"/>
+                        <button name="btn_res_users_base" string="btn_res_users_base" type="object"/>
+                        <button name="btn_hr_employee_base" string="btn_hr_employee_base" type="object"/>
+                        <button name="btn_tb_res_partner" string="btn_tb_res_partner" type="object"/>
+                        <button name="btn_res_partner" string="btn_res_partner" type="object"/>
+                        <button name="btn_hr_attendance" string="btn_hr_attendance" type="object"/>
+                        <br/>
+                    </group>
+
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_data_migrate_form" model="ir.actions.act_window">
+        <field name="name">数据迁移</field>
+        <field name="res_model">data.migrate</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" eval="False"/>
+        <!--<field name="search_view_id" ref="view_data_migrate_search"/>-->
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                数据迁移
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="action_data_migrate_form" id="menu_data_migrate" parent="base.menu_administration"
+              sequence="300"/>
+
+</odoo>
