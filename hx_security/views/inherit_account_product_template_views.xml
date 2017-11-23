@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="inherit_account_product_template_form" model="ir.ui.view">
+            <field name="name">inherit.account.product.template.form</field>
+            <field name="model">product.template</field><!--ref是要继承修改的类-->
+            <field name="inherit_id" ref="product.product_template_form_view"/><!--ref是要继承修改的视图的ID-->
+            <field name="arch" type="xml">
+                <!--继承要修改的视图
+                <page name="sales" position="after">
+                    <page string="Invoicing" name="invoicing" groups="account.group_account_invoice">
+                    -->
+                <!--
+                //page[@name='invoicing']：
+                        //page是路径，invoicing有上级page
+                        name是视图中属性name的值invoicing
+                -->
+               <xpath expr="//page[@name='invoicing']" position="attributes">
+                    <attribute name="groups">account.group_account_invoice,__export__.res_groups_67</attribute>
+               </xpath>
+
+            </field>
+        </record>
+
+
+    </data>
+</openerp>
