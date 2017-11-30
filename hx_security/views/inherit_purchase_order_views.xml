@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <record id="inherit_purchase_order_form" model="ir.ui.view">
-            <field name="name">inherit.purchase.order.form</field>
+        <record id="inherit_qdodoo_purchase_create_lingyongdan_form" model="ir.ui.view">
+            <field name="name">inherit.qdodoo_purchase.create_lingyongdan.form</field>
             <field name="model">purchase.order</field>
             <field name="inherit_id" ref="qdodoo_purchase.create_lingyongdan"/>
             <field name="arch" type="xml">
+                <!--设置create_lingyogndan按钮属于研发组，不是研发组的用户不显示-->
                <xpath expr="//header/button[@name='create_lingyogndan']" position="attributes">
                     <attribute name="groups">__export__.res_groups_78</attribute>
                </xpath>
             </field>
 
         </record>
+
+        <!--<record id="inherit_purchase_order_form" model="ir.ui.view">-->
+            <!--<field name="name">inherit.purchase.order.form</field>-->
+            <!--<field name="model">purchase.order</field>-->
+            <!--<field name="inherit_id" ref="purchase.purchase_order_form"/>-->
+            <!--<field name="arch" type="xml">-->
+                <!--&lt;!&ndash;设置字段partner_ref(供应商单号)属于__export__.res_groups_78，并且在采购订单处于草稿状态时不显示&ndash;&gt;-->
+               <!--&lt;!&ndash;<xpath expr="//field[@name='partner_ref']" position="attributes">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<attribute name="groups">__export__.res_groups_78</attribute>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<attribute name="attrs">{'invisible': [('state', 'in', ('draft'))]}</attribute>&ndash;&gt;-->
+               <!--&lt;!&ndash;</xpath>&ndash;&gt;-->
+               <!--<xpath expr="//field[@name='order_line']/tree//field[@name='name']" position="attributes">-->
+                    <!--<attribute name="groups">__export__.res_groups_78</attribute>-->
+                    <!--<attribute name="attrs">{'invisible': [('state', 'in', ('draft'))]}</attribute>-->
+               <!--</xpath>-->
+            <!--</field>-->
+        <!--</record>-->
+
     </data>
 </openerp>
