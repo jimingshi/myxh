@@ -30,6 +30,8 @@
         'views/inherit_product_template_views.xml',
         'views/inherit_account_invoice_views.xml',
         'views/inherit_account_move_views.xml',
+        'views/inherit_sale_order_views.xml',
+        'views/inherit_purchase_order_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [],

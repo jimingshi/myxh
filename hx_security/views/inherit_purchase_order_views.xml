@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="inherit_purchase_order_form" model="ir.ui.view">
+            <field name="name">inherit.purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="qdodoo_purchase.create_lingyongdan"/>
+            <field name="arch" type="xml">
+               <xpath expr="//header/button[@name='create_lingyogndan']" position="attributes">
+                    <attribute name="groups">__export__.res_groups_78</attribute>
+               </xpath>
+            </field>
+
+        </record>
+    </data>
+</openerp>

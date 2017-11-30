@@ -4,3 +4,4 @@ import inherit_account_product_template
 import inherit_product_template
 import inherit_account_invoice
 import inherit_account_move
+import inherit_sale_order
